@@ -1,5 +1,5 @@
 
-→ Making our payload to open an Image
+## Making our payload to open an Image
 
 	
 		Things needed:
@@ -10,7 +10,7 @@
 			
 			
 			
-→ Convert the image file to an icon
+## Convert the image file to an icon
 	
 		go to this link
 		
@@ -21,7 +21,7 @@
 		
 		
 
-→ Merging the img and the payload
+## Merging the img and the payload
 	
 			-> Select both img and the payload 
 			
@@ -62,7 +62,7 @@
 			
 			
 			
-→ Start the listener
+## Start the listener
 
 		-> msfconsole
 		
